@@ -16,9 +16,9 @@ appName = "KinesisToRedshift"
 kinesisStreamName = 'incoming-food-order-data'
 kinesisRegion = "us-east-1"
 checkpointLocation = 's3://stream-checkpointing/kinesisToRedshift/'
-redshiftJdbcUrl = 
-redshiftTable = 
-tempDir = 
+redshiftJdbcUrl = f"jdbc:redshift://redshift-cluster-1.cdko5eiaw5xf.us-east-1.redshift.amazonaws.com:5439/dev"
+redshiftTable = "food_delivery_datamart.factOrders"
+tempDir = "s3://redshift-temp-data-gds/temp-data/streaming_temp/"
 
 schema = StructType([
                 StructField('OrderID',IntegerType(),True),
