@@ -26,7 +26,6 @@ redshift_password = Variables.get("redshift_password")
 aws_access_key = Variables.get("aws_access_key")
 aws_secret_key = Variables.get("aws_secret_key")
 
-
 step_adder = EmrAddStepsOperator(
                 task_id = 'add_step',
                 job_flow_id = 'j-34WHJYRAKN8XF',
