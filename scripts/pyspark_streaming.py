@@ -67,14 +67,12 @@ def write_to_redshift(batch_df,batch_id):
             .mode('append') \
             .save()
 
-
 query = deduped_df.writeStream \
                   .foreachBatch(write_to_redshift) \
                   .outputMode('append') \
                   .trigger(processingTime = '5 seconds') \
                   .option("checkpointLocation",checkpointLocation) \
                   .start()
-
 
 print("Current batch written in redshift")
 
