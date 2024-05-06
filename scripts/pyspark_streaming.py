@@ -66,7 +66,6 @@ def write_to_redshift(batch_df,batch_id):
             .option('driver','com.amazon.redshift.jdbc.Driver') \
             .mode('append') \
             .save()
-    
 
 
 query = deduped_df.writeStream \
